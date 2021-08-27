@@ -28,24 +28,42 @@ const numbers = [21, 23, 32];
 let firstName = "Ojas";
 let lastName = "Ankit";
 const details = [firstName, lastName, calcAge2(2001), numbers];
-console.log(details);
+// console.log(details);
 
-details.push("Student");
-console.log(details);
+// details.push("Student");
+// console.log(details);
 
 const ojas = {
     firstName: "Ojas",
     lastName: "Ankit",
-    birthYear: 2001,
+    birthYear: 2005,
     job: "Student",
     friends: ["A", "B", "C", "D"],
-    calcAge: function (birthYear) {     //since birthYear is also defined as a property inside of the object we use the this keyword to access it!
-        return 2021 - birthYear;
+    calcAge: function () {     //since birthYear is also defined as a property inside of the object we use the this keyword to access it!
+        this.age = 2021 - this.birthYear;
+        return this.age
+    },
+    getSummary: function () {
+        return `${this.firstName} ${this.lastName} is ${this.calcAge()} years old and he has ${this.hasDriversLicense ? "a" : "no"} drivers license!`
     }
 };
 
+console.log(ojas.calcAge());
+ojas.hasDriversLicense = (ojas.age >= 18) ? true : false;
+console.log(ojas.getSummary());
+
 const nameKey = "Name";
+// console.log(ojas["last" + nameKey]);
+// console.log(`${ ojas.firstName } has ${ ojas.friends.length } friends and his favorite friend is ${ ojas.friends[0] } `);
+// const choice = prompt("What info would you want? firstName, lastName, birthYear, job, age, friends, hasDriversLicense")
 
-console.log(ojas["last" + nameKey]);
+// if (ojas[choice]) {
+//     console.log(ojas[choice]);
+// }
+// else {
+//     console.log("Invalid choice! Entered property does not exist!");
+// }
 
-console.log(`${ojas.firstName} has ${ojas.friends.length} friends and his favorite friend is ${ojas.friends[0]}`)
+
+
+
