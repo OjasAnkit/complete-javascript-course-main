@@ -12,9 +12,16 @@ function fruitProcessor(apples, oranges) {
     console.log(juice);
 }
 
+const marks = [21, 23, 32, 54];
+
+let firstName = "Ojas";
+let lastName = "Ankit";
+
 const calcAge2 = function (birthYear) {
     return 2021 - birthYear;
 }
+
+/*
 
 const calcAge3 = birthYear => 2021 - birthYear;
 const age3 = calcAge3(2001);
@@ -23,11 +30,6 @@ console.log(`I am currently ${calcAge2(2001)} years old!`);
 
 console.log(`I am currently ${age3} years old!`);
 
-const numbers = [21, 23, 32];
-
-let firstName = "Ojas";
-let lastName = "Ankit";
-const details = [firstName, lastName, calcAge2(2001), numbers];
 // console.log(details);
 
 // details.push("Student");
@@ -52,6 +54,8 @@ console.log(ojas.calcAge());
 ojas.hasDriversLicense = (ojas.age >= 18) ? true : false;
 console.log(ojas.getSummary());
 
+*/
+
 const nameKey = "Name";
 // console.log(ojas["last" + nameKey]);
 // console.log(`${ ojas.firstName } has ${ ojas.friends.length } friends and his favorite friend is ${ ojas.friends[0] } `);
@@ -63,6 +67,17 @@ const nameKey = "Name";
 // else {
 //     console.log("Invalid choice! Entered property does not exist!");
 // }
+
+const details = [firstName, lastName, "Student", calcAge2(2001), marks, ["A", "B", "C", "D"]];
+
+let typesOf = new Array();
+
+for (let i = 0; i < details.length; i++) {
+    console.log(details[i]);
+    typesOf.push(typeof details[i]);
+}
+
+console.log(typesOf);
 
 
 
